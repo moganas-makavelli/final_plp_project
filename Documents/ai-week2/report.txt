@@ -1,0 +1,50 @@
+AI for Climate Resilience: Forecasting CO2
+​
+  Emissions (SDG 13)
+1. SDG Problem and Objectives 🌍
+Category	Description
+UN Sustainable Development Goal (SDG)	SDG 13: Climate Action
+Specific Problem	Accurately forecasting national Annual Carbon Dioxide (CO 
+2
+​
+ ) Emissions (in kilotonnes) to inform national climate policies (Target 13.2). Reliable prediction helps governments set and monitor Nationally Determined Contributions (NDCs) under the Paris Agreement.
+Core Objective	Develop a machine learning model capable of predicting CO 
+2
+​
+  emissions based on key socioeconomic and energy indicators (GDP, population, and fossil fuel dependency).
+
+Export to Sheets
+2. Machine Learning Approach and Implementation 🤖
+Component	Detail
+ML Approach	Supervised Learning – Regression
+Specific Model	Random Forest Regressor (chosen for its ability to handle non-linear relationships and provide feature importance).
+Dataset & Tools	Synthetic time-series panel data simulating World Bank/UN indicators. Implemented using Python, Pandas, and Scikit-learn within a Jupyter/Colab environment.
+Data Preprocessing	A Pipeline with a ColumnTransformer was used. Numerical features (GDP, Population) were scaled using StandardScaler, and the categorical Country feature was converted using OneHotEncoder to ensure fair feature weighting during training.
+
+Export to Sheets
+3. Results and Key Policy Insights
+The model was trained on 80% of the simulated dataset and evaluated on the remaining 20%.
+
+Metric	Value	Interpretation
+R-squared (R 
+2
+ ) Score	0.9881	The model explains approximately 98.8% of the variance in CO 
+2
+​
+  emissions, indicating high predictive accuracy on the test set.
+Mean Absolute Error (MAE)	33,943.82 kt	The average magnitude of error in the forecast is 33,943 kilotonnes.
+
+Export to Sheets
+Policy Insight via Feature Importance
+Analysis of the Random Forest's feature importance (as visualized in the project demo) reveals the most powerful policy levers:
+
+Fossil Fuel Percentage (Highest Weight): This is the most significant driver of emissions. The AI insight mandates that climate policy must prioritize a rapid, systemic shift away from fossil fuels and massive investment in renewable energy generation (Target 7.2).
+
+GDP Per Capita: This highlights the strong historical link between economic development and carbon output. Policy must focus on decoupling—promoting economic growth that is fundamentally low-carbon—to ensure sustainable development without exacerbating the climate crisis.
+
+4. Ethical and Social Reflection ✨
+Bias Mitigation:
+The model relies on quantifiable, publicly available economic and energy data. A potential bias lies in the inherent historical nature of the data, which may disproportionately attribute responsibility to historically industrialized nations. By using a transparent model like Random Forest (which gives explicit feature weights), we allow policymakers to interpret results through the principle of "Common But Differentiated Responsibilities", ensuring that mitigation strategies are both effective and equitable.
+
+Fairness and Sustainability:
+The solution promotes fairness by making the drivers of emissions transparent. It ensures sustainability by identifying the most efficient levers (Fossil_Fuel_Pct), allowing countries with limited resources to target efforts for maximum climate impact. The ultimate goal is to provide a predictive tool that supports a just transition, where emission reductions do not hinder essential human development (SDG 1) or economic growth (SDG 8).
